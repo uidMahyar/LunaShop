@@ -1,0 +1,23 @@
+<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><title>راهنمای نسخه‌ی استاتیک</title>
+<style>body{font:15px/2 Vazirmatn,Tahoma,sans-serif;max-width:780px;margin:0 auto;padding:24px 16px}code,pre{background:#f3f4f7;border-radius:6px;direction:ltr;unicode-bidi:embed;padding:1px 7px}pre{padding:10px 14px;text-align:left}.note{background:#fff7e6;border:1px solid #ffd591;border-radius:8px;padding:8px 14px}</style></head><body>
+<h1>انتشار فروشگاه روی GitHub Pages</h1>
+<h2>۱) محصولات را روی کامپیوتر خودتان وارد کنید</h2>
+<p>مثل قبل <code>start.bat</code> را اجرا کنید و در <code>http://localhost:3000/admin</code> محصول، دسته و تنظیمات را بسازید. حتماً در پنل ← تنظیمات، راه‌های ارتباطی (واتس‌اپ، تلگرام، ایتا، ایمیل، تلفن) را پر کنید؛ سفارش‌ها از همین راه‌ها به دست شما می‌رسد.</p>
+<h2>۲) خروجی استاتیک بگیرید</h2>
+<p>روی <code>build-static.bat</code> دوبار کلیک کنید (یا <code>node build-static.js</code>). پوشه‌ی <code>docs</code> ساخته می‌شود.</p>
+<p>اگر آدرس سایت شما به شکل <code>user.github.io/نام-مخزن</code> است، مسیر پایه را بدهید:</p>
+<pre>node build-static.js --base=/نام-مخزن --site=https://user.github.io/نام-مخزن</pre>
+<p>برای آدرس <code>user.github.io</code> یا دامنه‌ی شخصی لازم نیست. این مقادیر را می‌توانید یک‌بار در <code>static.config.json</code> هم بنویسید.</p>
+<h2>۳) روی GitHub بگذارید</h2>
+<p>پروژه را در یک مخزن بارگذاری کنید (پوشه‌ی <code>data</code> در <code>.gitignore</code> است و آپلود نمی‌شود)، سپس Settings ← Pages ← Branch: <code>main</code> و پوشه‌ی <code>/docs</code>.</p>
+<p>هر بار که چیزی را در پنل عوض کردید، دوباره مرحله‌ی ۲ را اجرا کنید و پوشه‌ی <code>docs</code> را دوباره بفرستید.</p>
+<h2>۴) فونت</h2>
+<p>فایل <code>Vazirmatn.woff2</code> را در <code>public/fonts/</code> بگذارید، قبل از ساخت خروجی.</p>
+<h2>رفتار سفارش و محدودیت‌ها</h2>
+<div class="note"><ul>
+<li>سفارش در مرورگر مشتری ثبت می‌شود و مشتری باید متن آن را با دکمه‌ی واتس‌اپ/تلگرام/ایتا/ایمیل برای شما بفرستد. هیچ سفارشی به‌طور خودکار به سرور نمی‌رسد.</li>
+<li>پنل مدیریت و وضعیت سفارش در سایت منتشرشده وجود ندارد. پیگیری سفارش از طریق پیام انجام می‌شود.</li>
+<li>موجودی فقط در لحظه‌ی ساخت خروجی ثبت می‌شود و با فروش کم نمی‌شود. تعداد دفعات استفاده از کد تخفیف هم محدود نمی‌شود (کدها در فایل داده‌ی عمومی به‌صورت رمزشده هستند، ولی با حدس زدن قابل امتحان‌اند).</li>
+<li>قیمت‌ها سمت مرورگر محاسبه می‌شود؛ پس قیمت نهایی را هنگام تأیید سفارش خودتان بررسی کنید.</li>
+</ul></div>
+</body></html>

@@ -1,0 +1,10 @@
+{
+  "name": "shop-starter",
+  "version": "1.0.0",
+  "description": "فروشگاه‌ساز فارسی بدون وابستگی خارجی (Node.js)",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "build:static": "node build-static.js" },
+  "engines": { "node": ">=18" },
+  "license": "UNLICENSED",
+  "private": true
+}
